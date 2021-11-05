@@ -44,8 +44,6 @@ class ManagerTest {
         Ticket[] expected = new Ticket[]{two, three};
         Ticket[] actual = manager.findAll("DME", "BGY");
 
-        Arrays.sort(actual);
-
         assertArrayEquals(expected, actual);
 
     }
@@ -55,8 +53,6 @@ class ManagerTest {
 
         Ticket[] expected = new Ticket[]{eight, five, nine};
         Ticket[] actual = manager.findAll("SVO", "MXP");
-
-        Arrays.sort(actual);
 
         assertArrayEquals(expected, actual);
 
@@ -68,8 +64,6 @@ class ManagerTest {
         Ticket[] expected = new Ticket[0];
         Ticket[] actual = manager.findAll("EGO", "BGY");
 
-        Arrays.sort(actual);
-
         assertArrayEquals(expected, actual);
 
     }
@@ -79,8 +73,6 @@ class ManagerTest {
 
         Ticket[] expected = new Ticket[0];
         Ticket[] actual = manager.findAll("SVO", "LED");
-
-        Arrays.sort(actual);
 
         assertArrayEquals(expected, actual);
 
@@ -92,8 +84,6 @@ class ManagerTest {
         Ticket[] expected = new Ticket[0];
         Ticket[] actual = manager.findAll("MOW", "LED");
 
-        Arrays.sort(actual);
-
         assertArrayEquals(expected, actual);
 
     }
@@ -101,10 +91,8 @@ class ManagerTest {
     @Test
     void shouldFindAllWithoutFrom() {
 
-        Ticket[] expected = new Ticket[] {four, eight, seven, five, nine};
-        Ticket[] actual = manager.findAll("","MXP");
-
-        Arrays.sort(actual);
+        Ticket[] expected = new Ticket[]{four, eight, seven, five, nine};
+        Ticket[] actual = manager.findAll("", "MXP");
 
         assertArrayEquals(expected, actual);
 
@@ -113,10 +101,8 @@ class ManagerTest {
     @Test
     void shouldFindAllWithoutTo() {
 
-        Ticket[] expected = new Ticket[] {one, eight, five, nine};
-        Ticket[] actual = manager.findAll("SVO","");
-
-        Arrays.sort(actual);
+        Ticket[] expected = new Ticket[]{one, eight, five, nine};
+        Ticket[] actual = manager.findAll("SVO", "");
 
         assertArrayEquals(expected, actual);
 
@@ -125,10 +111,8 @@ class ManagerTest {
     @Test
     void shouldFindAllWithoutToWithoutFrom() {
 
-        Ticket[] expected = new Ticket[] {four, two, three, one, six, eight, seven, five, nine};
-        Ticket[] actual = manager.findAll("","");
-
-        Arrays.sort(actual);
+        Ticket[] expected = new Ticket[]{four, two, three, one, six, eight, seven, five, nine};
+        Ticket[] actual = manager.findAll("", "");
 
         assertArrayEquals(expected, actual);
 

@@ -40,8 +40,6 @@ public class ManagerTestSamePrice {
         Ticket[] expected = new Ticket[]{one, two, seven, five};
         Ticket[] actual = manager.findAll("SVO", "MXP");
 
-        Arrays.sort(actual);
-
         assertArrayEquals(expected, actual);
 
     }
